@@ -49,6 +49,14 @@ struct SegmentedControl<Indicator: View>: View {
                         if let index = tabs.firstIndex(of: tab), let activeIndex = tabs.firstIndex(of: activeTab) {
                             activeTab = tab
                             
+                            withAnimation(.snappy(duration: 0.25, extraBounce: 0), completionCriteria: .logicallyComplete) {
+                                excessTabWidth = containerWidthForEachTab * CGFloat(index - activeIndex)
+                            } completion: {
+                                withAnimation(.snappy(duration: 0.25, extraBounce: 0)) {
+                                    minX = containerWidthForEachTab * CGFloat(index)
+                                    excessTabWidth = 0
+                                }
+                            }
                             excessTabWidth = containerWidthForEachTab * CGFloat(index - activeIndex)
                         }
                     }
@@ -58,8 +66,10 @@ struct SegmentedControl<Indicator: View>: View {
                                 let size = $0.size
                                 
                                 indicatorView(size)
-                                    .frame(width: size.width + (excessTabWidth),
+                                    .frame(width: size.width + (excessTabWidth < 0 ? -excessTabWidth : excessTabWidth),
                                            height: size.height)
+                                    .frame(width: size.width, alignment: excessTabWidth < 0 ? .trailing : .leading)
+                                    .offset(x: minX)
                             }
                         }
                     }
