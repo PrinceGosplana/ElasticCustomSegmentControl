@@ -14,12 +14,13 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 15) {
-                SegmentedControl(tabs: SegmentedTab.allCases,
-                                 activeTab: $activiTab,
-                                 height: 35,
-                                 font: .body,
-                                 activeTint: .white,
-                                 inActiveTint: .gray.opacity(0.5)
+                SegmentedControl(
+                    tabs: SegmentedTab.allCases,
+                    activeTab: $activiTab,
+                    height: 35,
+                    font: .body,
+                    activeTint: .white,
+                    inActiveTint: .gray.opacity(0.5)
                 ) { size in
                     Rectangle()
                         .fill(.blue)

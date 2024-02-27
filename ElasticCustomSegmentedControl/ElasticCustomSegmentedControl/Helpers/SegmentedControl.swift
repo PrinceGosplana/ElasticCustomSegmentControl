@@ -75,11 +75,24 @@ struct SegmentedControl<Indicator: View>: View {
                     }
                 }
             }
+            .preference(key: SizeKey.self, value: size)
+            .onPreferenceChange(SizeKey.self) { size in
+                if let index = tabs.firstIndex(of: activeTab) {
+                    minX = containerWidthForEachTab * CGFloat(index)
+                    excessTabWidth = 0
+                }
+            }
         }
         .frame(height: height)
     }
 }
 
+fileprivate struct SizeKey: PreferenceKey {
+    static var defaultValue: CGSize = .zero
+    static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
+        value = nextValue()
+    }
+}
 #Preview {
     ContentView()
 }
