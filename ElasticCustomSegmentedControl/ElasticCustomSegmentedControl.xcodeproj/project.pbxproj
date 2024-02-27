@@ -11,6 +11,7 @@
 		95B130602B8DDBF400B2EC25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1305F2B8DDBF400B2EC25 /* ContentView.swift */; };
 		95B130622B8DDBF600B2EC25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95B130612B8DDBF600B2EC25 /* Assets.xcassets */; };
 		95B130652B8DDBF600B2EC25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95B130642B8DDBF600B2EC25 /* Preview Assets.xcassets */; };
+		95B1306D2B8DDCD800B2EC25 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1306C2B8DDCD800B2EC25 /* SegmentedControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		95B1305F2B8DDBF400B2EC25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		95B130612B8DDBF600B2EC25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95B130642B8DDBF600B2EC25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		95B1306C2B8DDCD800B2EC25 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		95B1305C2B8DDBF400B2EC25 /* ElasticCustomSegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
+				95B1306B2B8DDCBC00B2EC25 /* Helpers */,
 				95B1305D2B8DDBF400B2EC25 /* ElasticCustomSegmentedControlApp.swift */,
 				95B1305F2B8DDBF400B2EC25 /* ContentView.swift */,
 				95B130612B8DDBF600B2EC25 /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				95B130642B8DDBF600B2EC25 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		95B1306B2B8DDCBC00B2EC25 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				95B1306C2B8DDCD800B2EC25 /* SegmentedControl.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95B130602B8DDBF400B2EC25 /* ContentView.swift in Sources */,
+				95B1306D2B8DDCD800B2EC25 /* SegmentedControl.swift in Sources */,
 				95B1305E2B8DDBF400B2EC25 /* ElasticCustomSegmentedControlApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
