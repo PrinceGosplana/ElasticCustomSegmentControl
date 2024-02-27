@@ -21,9 +21,14 @@ struct SegmentedControl<Indicator: View>: View {
     /// Indicator View
     @ViewBuilder var indicatorView: (CGSize) -> Indicator
     
+    /// View properties
+    @State private var excessTabWidth: CGFloat = .zero
+    @State private var minX: CGFloat = .zero
+    
     var body: some View {
         GeometryReader {
             let size = $0.size
+            let containerWidthForEachTab = size.width / CGFloat(tabs.count)
             
             HStack(spacing: 0) {
                 ForEach(tabs, id: \.rawValue) { tab in
@@ -40,7 +45,23 @@ struct SegmentedControl<Indicator: View>: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .contentShape(.rect)
                     .onTapGesture {
-                        activeTab = tab
+                        
+                        if let index = tabs.firstIndex(of: tab), let activeIndex = tabs.firstIndex(of: activeTab) {
+                            activeTab = tab
+                            
+                            excessTabWidth = containerWidthForEachTab * CGFloat(index - activeIndex)
+                        }
+                    }
+                    .background(alignment: .leading) {
+                        if tabs.first == tab {
+                            GeometryReader {
+                                let size = $0.size
+                                
+                                indicatorView(size)
+                                    .frame(width: size.width + (excessTabWidth),
+                                           height: size.height)
+                            }
+                        }
                     }
                 }
             }
