@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    /// View Properties
+    @State private var activiTab: SegmentedTab = .home
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            VStack(spacing: 15) {
+                SegmentedControl(tabs: SegmentedTab.allCases,
+                                 activeTab: $activiTab,
+                                 height: 35
+                ) { size in
+                    Rectangle()
+                        .fill(.blue)
+                        .frame(height: 4)
+                        .padding(.horizontal, 10)
+                        .frame(maxWidth: .infinity, alignment: .bottom)
+                }
+                
+                Spacer(minLength: 0)
+            }
+            .navigationTitle("Segmented Control")
         }
-        .padding()
     }
 }
 
