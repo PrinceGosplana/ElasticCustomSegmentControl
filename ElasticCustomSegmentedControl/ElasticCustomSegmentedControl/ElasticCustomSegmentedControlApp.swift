@@ -15,3 +15,10 @@ struct ElasticCustomSegmentedControlApp: App {
         }
     }
 }
+
+enum SegmentedTab: String, CaseIterable {
+    case home = "house.fill"
+    case favorites = "suit.heart.fill"
+    case notifications = "bell.fill"
+    case profile = "person.fill"
+}

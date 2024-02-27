@@ -7,12 +7,22 @@
 
 import SwiftUI
 
-struct SegmentedControl: View {
+struct SegmentedControl<Indicator: View>: View {
+    var tabs: [SegmentedTab]
+    @Binding var activeTab: SegmentedTab
+    var height: CGFloat = 45
+    
+    /// Indicator View
+    @ViewBuilder var indicatorView: (CGSize) -> Indicator
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader {
+            let size = $0.size
+        }
+        .frame(height: height)
     }
 }
 
 #Preview {
-    SegmentedControl()
+    ContentView()
 }
