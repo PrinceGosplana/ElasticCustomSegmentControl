@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     /// View Properties
     @State private var activiTab: SegmentedTab = .home
+    @State private var oposedType: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -34,6 +35,10 @@ struct ContentView: View {
                         .fill(.ultraThinMaterial)
                         .ignoresSafeArea()
                 }
+                
+                Toggle("Segmented control Type - 2", isOn: $oposedType)
+                    .padding(10)
+                    .background(.regularMaterial, in: .rect(cornerRadius: 10))
                 
                 Spacer(minLength: 0)
             }
