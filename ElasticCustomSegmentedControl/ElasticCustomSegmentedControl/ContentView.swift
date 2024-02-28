@@ -26,7 +26,7 @@ struct ContentView: View {
                         .fill(.blue)
                         .frame(height: 4)
                         .padding(.horizontal, 10)
-                        .frame(maxWidth: .infinity, alignment: .bottom)
+                        .frame(maxHeight: .infinity, alignment: .bottom)
                 }
                 
                 Spacer(minLength: 0)
