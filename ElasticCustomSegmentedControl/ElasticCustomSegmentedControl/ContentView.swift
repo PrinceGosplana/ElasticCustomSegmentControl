@@ -28,6 +28,12 @@ struct ContentView: View {
                         .padding(.horizontal, 10)
                         .frame(maxHeight: .infinity, alignment: .bottom)
                 }
+                .padding(.top, 10)
+                .background {
+                    RoundedRectangle(cornerRadius: 0)
+                        .fill(.ultraThinMaterial)
+                        .ignoresSafeArea()
+                }
                 
                 Spacer(minLength: 0)
             }
