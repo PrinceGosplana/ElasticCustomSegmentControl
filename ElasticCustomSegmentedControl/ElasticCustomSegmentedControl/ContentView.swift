@@ -19,7 +19,7 @@ struct ContentView: View {
                     activeTab: $activiTab,
                     height: 35,
                     font: .body,
-                    activeTint: .white,
+                    activeTint: .primary,
                     inActiveTint: .gray.opacity(0.5)
                 ) { size in
                     Rectangle()
@@ -32,6 +32,7 @@ struct ContentView: View {
                 Spacer(minLength: 0)
             }
             .navigationTitle("Segmented Control")
+            .toolbarBackground(.hidden, for: .navigationBar)
         }
     }
 }
