@@ -42,6 +42,8 @@ struct ContentView: View {
                 
                 Spacer(minLength: 0)
             }
+            .padding(.vertical, oposedType ? 15 : 0)
+            .animation(.snappy, value: oposedType)
             .navigationTitle("Segmented Control")
             .toolbarBackground(.hidden, for: .navigationBar)
         }
