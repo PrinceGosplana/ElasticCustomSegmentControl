@@ -20,13 +20,13 @@ struct ContentView: View {
                     activeTab: $activiTab,
                     height: 35,
                     font: .body,
-                    activeTint: .primary,
+                    activeTint: oposedType ? .white : .primary,
                     inActiveTint: .gray.opacity(0.5)
                 ) { size in
                     RoundedRectangle(cornerRadius: oposedType ? 30 : 0)
                         .fill(.blue)
                         .frame(height: oposedType ? size.height : 4)
-                        .padding(.horizontal, 10)
+                        .padding(.horizontal, oposedType ? 0 : 10)
                         .frame(maxHeight: .infinity, alignment: .bottom)
                 }
                 .padding(.top, oposedType ? 0 : 10)
