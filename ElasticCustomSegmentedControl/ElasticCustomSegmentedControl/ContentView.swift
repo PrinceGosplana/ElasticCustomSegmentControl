@@ -23,13 +23,13 @@ struct ContentView: View {
                     activeTint: .primary,
                     inActiveTint: .gray.opacity(0.5)
                 ) { size in
-                    Rectangle()
+                    RoundedRectangle(cornerRadius: oposedType ? 30 : 0)
                         .fill(.blue)
-                        .frame(height: 4)
+                        .frame(height: oposedType ? size.height : 4)
                         .padding(.horizontal, 10)
                         .frame(maxHeight: .infinity, alignment: .bottom)
                 }
-                .padding(.top, 10)
+                .padding(.top, oposedType ? 0 : 10)
                 .background {
                     RoundedRectangle(cornerRadius: oposedType ? 30 : 0)
                         .fill(.ultraThinMaterial)
