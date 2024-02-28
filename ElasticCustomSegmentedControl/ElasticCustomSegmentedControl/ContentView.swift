@@ -31,7 +31,7 @@ struct ContentView: View {
                 }
                 .padding(.top, 10)
                 .background {
-                    RoundedRectangle(cornerRadius: 0)
+                    RoundedRectangle(cornerRadius: oposedType ? 30 : 0)
                         .fill(.ultraThinMaterial)
                         .ignoresSafeArea()
                 }
