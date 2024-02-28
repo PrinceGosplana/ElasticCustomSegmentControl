@@ -35,6 +35,7 @@ struct ContentView: View {
                         .fill(.ultraThinMaterial)
                         .ignoresSafeArea()
                 }
+                .padding(.horizontal, oposedType ? 15 : 0)
                 
                 Toggle("Segmented control Type - 2", isOn: $oposedType)
                     .padding(10)
